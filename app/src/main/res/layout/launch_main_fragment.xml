@@ -20,7 +20,8 @@
             android:text="Latest"
             android:textIsSelectable="true"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/nextLaunchesButton"

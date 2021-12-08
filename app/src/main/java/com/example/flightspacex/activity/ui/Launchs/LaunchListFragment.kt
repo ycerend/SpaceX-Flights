@@ -413,7 +413,7 @@ class LaunchListFragment() : Fragment(),
                     links_list[position],
                     details_list[position],
                     upcoming_list[position],
-                    static_fire_date_utc_list[position],
+                    Timestamp(111111),
                     static_fire_date_unix_list[position],
                     timeline_list[position]
                 )
