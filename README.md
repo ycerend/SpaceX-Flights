@@ -8,6 +8,9 @@ How to run:
 3. Start application
 
 
+APK Location:
+
+
 Configuration:
 Android Minumum SDK:23 (Android 6.0)
 
