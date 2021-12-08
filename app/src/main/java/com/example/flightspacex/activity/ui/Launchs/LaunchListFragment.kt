@@ -74,7 +74,7 @@ class LaunchListFragment() : Fragment(),
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        RetrofitClient.instance.getAllPastLaunches().enqueue(object :
+        RetrofitClient.instance.getAllUpcomingLaunches().enqueue(object :
             Callback<List<Launch>> {
             override fun onResponse(
                 call: Call<List<Launch>>,
@@ -133,7 +133,7 @@ class LaunchListFragment() : Fragment(),
                         details_list.add(launch.details )
                         upcoming_list.add(launch.upcoming )
 
-                        static_fire_date_utc_list.add(launch.static_fire_date_utc )
+                        static_fire_date_utc_list.add(launch.static_fire_date_utc as Timestamp)
                         static_fire_date_unix_list.add(launch.static_fire_date_unix)
                         timeline_list.add(launch.timeline)
 
@@ -327,10 +327,10 @@ class LaunchListFragment() : Fragment(),
         override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
             if (flight_number_list[position].equals(""))
-                flight_number_list[position] = -1
+                        flight_number_list[position] = -1
 
-            if (mission_name_list[position].equals(""))
-                mission_name_list[position] = "-"
+                if (mission_name_list[position].equals(""))
+                    mission_name_list[position] = "-"
 
             if (mission_id_list[position].equals(""))
                 mission_id_list[position] = listOf("")
@@ -344,9 +344,9 @@ class LaunchListFragment() : Fragment(),
             if (launch_date_unix_list[position].equals(""))
                 launch_date_unix_list[position] = -1
 
-            if (launch_date_utc_list[position].equals(""))
+            if (launch_date_utc_list[position].equals(null))
                 launch_date_utc_list[position] = Timestamp(11111)
-            if (launch_date_local_list[position].equals(""))
+            if (launch_date_local_list[position].equals(null))
                 launch_date_local_list[position] = Timestamp(11111)
 
             if (is_tentative_list[position].equals(""))
@@ -385,12 +385,12 @@ class LaunchListFragment() : Fragment(),
                 if (upcoming_list[position].equals(""))
                     upcoming_list[position] = false
 
-                if (static_fire_date_utc_list[position].equals(""))
-                    static_fire_date_utc_list[position] = Timestamp(1111)
-                if (static_fire_date_unix_list[position].equals(""))
+
+                static_fire_date_utc_list[position] = Timestamp(1111)
+
                     static_fire_date_unix_list[position] = -1
-                if (timeline_list[position].equals(""))
-                    timeline_list[position] = Timeline()
+
+                    timeline_list[position] = Timeline(1111)
 
 
                 val launch = Launch(
@@ -418,14 +418,7 @@ class LaunchListFragment() : Fragment(),
                     timeline_list[position]
                 )
 
-                val imageView =
-                    viewHolder.itemView.findViewById(R.id.launch_list_item_image) as ImageView
-                viewHolder.setData(
-                    launch,
-                    links_list[position]?.flickr_images[0],
-                    imageView,
-                    activity as Context
-                )
+
 
 
                 /*val links_textview = viewHolder.itemView.findViewById(R.id.event_links) as TextView
@@ -470,15 +463,7 @@ class LaunchListFragment() : Fragment(),
                 context: Context
             ) {
                 print("##### SET DATA İÇİ " + launchModel.mission_id + " " + launchModel.mission_name)
-                if (imageUrl != "") {
-                    var url = URI(imageUrl)
-                    System.out.print(url)
-                    Glide.with(context).asBitmap().load(url).into(imageView)
-                } else {
-                    val imgResId = R.drawable.ic_event_item_icon_image_foreground
-                    imageView.setImageResource(imgResId)
 
-                }
                 displayLaunchListBinding.launchModel = launchModel
             }
 

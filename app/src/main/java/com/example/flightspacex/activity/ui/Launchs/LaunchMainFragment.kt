@@ -42,7 +42,7 @@ class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
 
 
 
-        val latestLaunchButton = root.findViewById<TextView>(R.id.latestLaunchesButton)
+        val latestLaunchButton = root.findViewById<Button>(R.id.latestLaunchesButton)
         latestLaunchButton.isEnabled = true
         latestLaunchButton.isClickable = true
         latestLaunchButton.setOnClickListener{root->
@@ -53,11 +53,11 @@ class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
                         response: Response<Launch>
                     ) {
                         if (response.code() == 200) {
-                            val response_launch_next = response?.body() as Launch
+                            val response_launch_latest = response?.body() as Launch
 
                             fragmentTransaction(
                                 parentActivityManager,
-                                SingleLaunchDisplayFragment.newInstance(response_launch_next),
+                                SingleLaunchDisplayFragment.newInstance(response_launch_latest),
                                 containerId,
                                 true,
                                 true,
@@ -79,7 +79,7 @@ class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
                 })
 
         }
-        val nextLaunchButton = root.findViewById<TextView>(R.id.nextLaunchesButton)
+        val nextLaunchButton = root.findViewById<Button>(R.id.nextLaunchesButton)
         nextLaunchButton.isEnabled = true
         nextLaunchButton.isClickable = true
         nextLaunchButton.setOnClickListener{root->
