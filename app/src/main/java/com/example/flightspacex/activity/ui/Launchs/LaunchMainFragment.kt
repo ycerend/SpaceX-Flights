@@ -2,16 +2,23 @@ package com.example.flightspacex.activity.ui.Launchs
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import com.example.flightspacex.R
 import com.example.flightspacex.activity.MiddleMainActivity
+import com.example.flightspacex.api.RetrofitClient
+import com.example.flightspacex.data.models.Launch
 import com.example.flightspacex.interfaces.fragmentOperationsInterface
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import kotlin.properties.Delegates
 
 class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
@@ -39,29 +46,74 @@ class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
         latestLaunchButton.isEnabled = true
         latestLaunchButton.isClickable = true
         latestLaunchButton.setOnClickListener{root->
-            val fragment = LatestLaunchFragment.newInstance()
-            fragmentTransaction(
-                parentActivityManager,
-                fragment,
-                containerId,
-                true,
-                true,
-                false
-            )
+            RetrofitClient.instance.getLatestLaunch()
+                .enqueue(object : Callback<Launch> {
+                    override fun onResponse(
+                        call: Call<Launch>?,
+                        response: Response<Launch>
+                    ) {
+                        if (response.code() == 200) {
+                            val response_launch_next = response?.body() as Launch
+
+                            fragmentTransaction(
+                                parentActivityManager,
+                                SingleLaunchDisplayFragment.newInstance(response_launch_next),
+                                containerId,
+                                true,
+                                true,
+                                false
+                            )
+
+                        } else {
+                            print("nalaka")
+                            Log.d("error message:", response.message())
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Launch>, t: Throwable) {
+                        println(t.message)
+                        println(t)
+                        Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+                    }
+
+                })
+
         }
         val nextLaunchButton = root.findViewById<TextView>(R.id.nextLaunchesButton)
         nextLaunchButton.isEnabled = true
         nextLaunchButton.isClickable = true
         nextLaunchButton.setOnClickListener{root->
-            val fragment = LatestNextLaunchs.newInstance()
-            fragmentTransaction(
-                parentActivityManager,
-                fragment,
-                containerId,
-                true,
-                true,
-                false
-            )
+            RetrofitClient.instance.getNextLaunch()
+                .enqueue(object : Callback<Launch> {
+                    override fun onResponse(
+                        call: Call<Launch>?,
+                        response: Response<Launch>
+                    ) {
+                        if (response.code() == 200) {
+                            val response_launch_next = response?.body() as Launch
+
+                            fragmentTransaction(
+                                parentActivityManager,
+                                SingleLaunchDisplayFragment.newInstance(response_launch_next),
+                                containerId,
+                                true,
+                                true,
+                                false
+                            )
+
+                        } else {
+                            print("nalaka")
+                            Log.d("error message:", response.message())
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Launch>, t: Throwable) {
+                        println(t.message)
+                        println(t)
+                        Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+                    }
+
+                })
         }
         return root
 

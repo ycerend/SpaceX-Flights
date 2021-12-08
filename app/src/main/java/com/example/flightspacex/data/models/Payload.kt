@@ -18,7 +18,7 @@ data class Payload(
 data class OrbitParameters(
     val reference_system: String="",
     val regime: String ="",
-    val longitude: Int=-1,
+    val longitude: Double=-1.0,
     val semi_major_axis_km:Double=-1.0,
     val eccentricity:Double=-1.0,
     val periapsis_km:Double=-1.0,
