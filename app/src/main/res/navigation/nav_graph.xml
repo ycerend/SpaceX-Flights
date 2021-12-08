@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+
+
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.example.flightspacex.activity.ui.Events.EventListFragment"
+        android:label="event_list_fragment"
+        tools:layout="@layout/event_list_fragment" />
+    <fragment
+        android:id="@+id/launchMainFragment"
+        android:name="com.example.flightspacex.activity.ui.Launchs.LaunchMainFragment"
+        android:label="launch_main_fragment"
+        tools:layout="@layout/launch_main_fragment" />
+    <fragment
+        android:id="@+id/missionListFragment"
+        android:name="com.example.flightspacex.activity.ui.Missions.MissionListFragment"
+        android:label="mission_list_fragment"
+        tools:layout="@layout/mission_list_fragment" />
+
+</navigation>
