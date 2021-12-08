@@ -8,7 +8,7 @@ How to run:
 3. Start application
 
 
-APK Location:
+APK Location: https://github.com/ycerend/SpaceX-Flights/blob/main/app/build/outputs/apk/release/app-release-unsigned.apk
 
 
 Configuration:
