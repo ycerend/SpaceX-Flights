@@ -31,43 +31,15 @@ class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
         val parentActivityManager : FragmentManager = activity?.supportFragmentManager as FragmentManager
         containerId= container!!.id
 
-        val pastLaunchButton = root.findViewById<Button>(R.id.pastLaunchesButton)
-        pastLaunchButton.isEnabled = true
-        pastLaunchButton.isClickable = true
-        pastLaunchButton.setOnClickListener{root->
-            val fragment = LaunchListFragment.newInstance(false,true,false,false)
-            fragmentTransaction(
-                parentActivityManager,
-                fragment,
-                containerId,
-                true,
-                true,
-                false
-            )
-        }
 
 
 
-        val upcomingLaunchButton = root.findViewById<Button>(R.id.upcomingLaunchesButton)
-        upcomingLaunchButton.isEnabled = true
-        upcomingLaunchButton.isClickable = true
-        upcomingLaunchButton.setOnClickListener{root->
-            val fragment = LaunchListFragment.newInstance(true,false,false,false)
-            fragmentTransaction(
-                parentActivityManager,
-                fragment,
-                containerId,
-                true,
-                true,
-                false
-            )
-        }
 
-        val latestLaunchButton = root.findViewById<Button>(R.id.latestLaunchesButton)
+        val latestLaunchButton = root.findViewById<TextView>(R.id.latestLaunchesButton)
         latestLaunchButton.isEnabled = true
         latestLaunchButton.isClickable = true
         latestLaunchButton.setOnClickListener{root->
-            val fragment = LaunchListFragment.newInstance(false,false,true,false)
+            val fragment = LatestLaunchFragment.newInstance()
             fragmentTransaction(
                 parentActivityManager,
                 fragment,
@@ -77,11 +49,11 @@ class LaunchMainFragment() : Fragment(), fragmentOperationsInterface {
                 false
             )
         }
-        val nextLaunchButton = root.findViewById<Button>(R.id.nextLaunchesButton)
+        val nextLaunchButton = root.findViewById<TextView>(R.id.nextLaunchesButton)
         nextLaunchButton.isEnabled = true
         nextLaunchButton.isClickable = true
         nextLaunchButton.setOnClickListener{root->
-            val fragment = LaunchListFragment.newInstance(false,false,false,true)
+            val fragment = LatestNextLaunchs.newInstance()
             fragmentTransaction(
                 parentActivityManager,
                 fragment,

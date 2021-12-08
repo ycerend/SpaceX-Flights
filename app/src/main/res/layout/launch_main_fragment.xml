@@ -11,16 +11,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-        <Button
-            android:id="@+id/pastLaunchesButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Past"
-            android:textSize="20sp"
-            android:clickable="true"/>
 
-        <Button
+
+        <TextView
             android:id="@+id/latestLaunchesButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -29,16 +22,9 @@
             android:textSize="20sp"
             android:textIsSelectable="true"/>
 
-        <Button
-            android:id="@+id/upcomingLaunchesButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Upcoming"
-            android:textSize="20sp"
-            android:textIsSelectable="true"/>
 
-        <Button
+
+        <TextView
             android:id="@+id/nextLaunchesButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

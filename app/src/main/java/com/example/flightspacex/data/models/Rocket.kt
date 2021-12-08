@@ -51,7 +51,7 @@ data class SecondStage(
     val fuel_amount_tons: Int=-1,
     val burn_time_sec: Int=-1,
     val thrust: ThrustValues = ThrustValues(),
-    val payloads: Payload = Payload()
+    val payloads: List<Payload> = listOf()
 )
 
 data class Engines(

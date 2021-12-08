@@ -29,7 +29,7 @@ import java.net.URI
 import java.sql.Time
 import java.sql.Timestamp
 
-class LaunchListFragment(upcoming: Boolean, past: Boolean, latest: Boolean, next: Boolean) : Fragment(),
+class LaunchListFragment() : Fragment(),
     fragmentOperationsInterface {
 
     private var containerId: ViewGroup? = null
@@ -60,14 +60,9 @@ class LaunchListFragment(upcoming: Boolean, past: Boolean, latest: Boolean, next
 
 
     companion object {
-        fun newInstance(
-            upcoming: Boolean,
-            past: Boolean,
-            latest: Boolean,
-            next: Boolean
-        ): LaunchListFragment {
+        fun newInstance(): LaunchListFragment {
             val args = Bundle()
-            val fragment = LaunchListFragment(upcoming, past, latest, next)
+            val fragment = LaunchListFragment()
             fragment.arguments = args
             return fragment
         }
@@ -78,298 +73,113 @@ class LaunchListFragment(upcoming: Boolean, past: Boolean, latest: Boolean, next
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val upcoming = requireArguments().getBoolean("upcoming")
-        val past = requireArguments().getBoolean("past")
-        val latest = requireArguments().getBoolean("latest")
-        val next = requireArguments().getBoolean("next")
 
-        if(latest){
-            val parentActivityManager: FragmentManager =
-                activity?.supportFragmentManager as FragmentManager
+        RetrofitClient.instance.getAllPastLaunches().enqueue(object :
+            Callback<List<Launch>> {
+            override fun onResponse(
+                call: Call<List<Launch>>,
+                response: Response<List<Launch>>
+            ) {
+                println(response.toString())
+                print("response " + (response.code() == 200 ))
+                if(response.code() == 200 ){
+                    print("burdayız")
+                    var launchList = response?.body() as List<Launch>
+                    flight_number_list.clear()
+                    mission_name_list.clear()
+                    mission_id_list.clear()
+                    launch_year_list.clear()
+                    launch_date_unix_list.clear()
+                    launch_date_utc_list.clear()
+                    launch_date_local_list.clear()
+                    is_tentative_list.clear()
 
-            activity?.supportFragmentManager as FragmentManager
-            RetrofitClient.instance.getLatestLaunch()
-                .enqueue(object : Callback<Launch> {
-                    override fun onResponse(
-                        call: Call<Launch>?,
-                        response: Response<Launch>
-                    ) {
-                        if(response.code() == 200 ){
-                            val response_launch_latest = response?.body() as Launch
+                    tentative_max_precision_list.clear()
+                    tbd_list.clear()
+                    launch_window_list.clear()
+                    rocket_list.clear()
+                    ships_list.clear()
+                    telemetry_list.clear()
+                    launch_site_list.clear()
+                    launch_success_list.clear()
+                    links_list.clear()
+                    details_list.clear()
+                    upcoming_list.clear()
 
-                            fragmentTransaction(
-                                parentActivityManager,
-                                SingleLaunchDisplayFragment.newInstance(response_launch_latest),
-                                (containerId!!.id),
-                                true,
-                                true,
-                                false
-                            )
+                    static_fire_date_utc_list.clear()
+                    static_fire_date_unix_list.clear()
+                    timeline_list.clear()
 
-                        }
-                        else{
-                            print("nalaka")
-                            Log.d("error message:", response.message())
-                        }
+
+                    for (launch in launchList) {
+                        flight_number_list.add(launch.flight_number)
+                        mission_name_list.add(launch.mission_name )
+                        mission_id_list.add(launch.mission_id )
+                        launch_year_list.add(launch.launch_year )
+                        launch_date_unix_list.add(launch.launch_date_unix )
+                        launch_date_utc_list.add(launch.launch_date_utc)
+                        launch_date_local_list.add(launch.launch_date_local )
+                        is_tentative_list.add(launch.is_tentative)
+
+                        tentative_max_precision_list.add(launch.tentative_max_precision )
+                        tbd_list.add(launch.tbd )
+                        launch_window_list.add(launch.launch_window)
+                        rocket_list.add(launch.rocket)
+                        ships_list.add(launch.ships )
+                        telemetry_list.add(launch.telemetry )
+                        launch_site_list.add(launch.launch_site )
+                        launch_success_list.add(launch.launch_success )
+                        links_list.add(launch.links as Links)
+                        details_list.add(launch.details )
+                        upcoming_list.add(launch.upcoming )
+
+                        static_fire_date_utc_list.add(launch.static_fire_date_utc )
+                        static_fire_date_unix_list.add(launch.static_fire_date_unix)
+                        timeline_list.add(launch.timeline)
+
                     }
-                    override fun onFailure(call: Call<Launch>, t: Throwable) {
-                        println(t.message)
-                        println(t)
-                        Toast.makeText(context,t.message, Toast.LENGTH_LONG).show()
-                    }
+                    recyclerView.layoutManager = GridLayoutManager(context, 1)
+                    recyclerView.adapter = LaunchListAdapter(
+                        flight_number_list,
+                        mission_name_list,
+                        mission_id_list,
+                        launch_year_list,
+                        launch_date_unix_list,
+                        launch_date_utc_list,
+                        launch_date_local_list,
+                        is_tentative_list,
+                        tentative_max_precision_list,
+                        tbd_list,
+                        launch_window_list,
+                        rocket_list,
+                        ships_list,
+                        telemetry_list,
+                        launch_site_list,
+                        launch_success_list,
+                        links_list,
+                        details_list,
+                        upcoming_list,
+                        static_fire_date_utc_list,
+                        static_fire_date_unix_list,
+                        timeline_list,
+                        context
+                    )
 
-                })
-
-
-        }
-        else if(next){
-            val parentActivityManager: FragmentManager =
-                activity?.supportFragmentManager as FragmentManager
-            RetrofitClient.instance.getNextLaunch()
-                .enqueue(object : Callback<Launch> {
-                    override fun onResponse(
-                        call: Call<Launch>?,
-                        response: Response<Launch>
-                    ) {
-                        if(response.code() == 200 ){
-                            val response_launch_next = response?.body() as Launch
-
-                            fragmentTransaction(
-                                parentActivityManager,
-                                SingleLaunchDisplayFragment.newInstance(response_launch_next),
-                                (containerId!!.id),
-                                true,
-                                true,
-                                false
-                            )
-
-                        }
-                        else{
-                            print("nalaka")
-                            Log.d("error message:", response.message())
-                        }
-                    }
-                    override fun onFailure(call: Call<Launch>, t: Throwable) {
-                        println(t.message)
-                        println(t)
-                        Toast.makeText(context,t.message, Toast.LENGTH_LONG).show()
-                    }
-
-                })
-
-
-        }
-        else if(upcoming){
-            RetrofitClient.instance.getAllUpcomingLaunches().enqueue(object :
-                Callback<List<Launch>> {
-                override fun onResponse(
-                    call: Call<List<Launch>>,
-                    response: Response<List<Launch>>
-                ) {
-                    println(response.toString())
-                    print("response " + (response.code() == 200 ))
-                    if(response.code() == 200 ){
-                        print("burdayız")
-                        var launchList = response?.body() as List<Launch>
-                        flight_number_list.clear()
-                        mission_name_list.clear()
-                        mission_id_list.clear()
-                        launch_year_list.clear()
-                        launch_date_unix_list.clear()
-                        launch_date_utc_list.clear()
-                        launch_date_local_list.clear()
-                        is_tentative_list.clear()
-
-                        tentative_max_precision_list.clear()
-                        tbd_list.clear()
-                        launch_window_list.clear()
-                        rocket_list.clear()
-                        ships_list.clear()
-                        telemetry_list.clear()
-                        launch_site_list.clear()
-                        launch_success_list.clear()
-                        links_list.clear()
-                        details_list.clear()
-                        upcoming_list.clear()
-
-                        static_fire_date_utc_list.clear()
-                        static_fire_date_unix_list.clear()
-                        timeline_list.clear()
-
-
-                        for (launch in launchList) {
-                            flight_number_list.add(launch.flight_number)
-                            mission_name_list.add(launch.mission_name )
-                            mission_id_list.add(launch.mission_id )
-                            launch_year_list.add(launch.launch_year )
-                            launch_date_unix_list.add(launch.launch_date_unix )
-                            launch_date_utc_list.add(launch.launch_date_utc)
-                            launch_date_local_list.add(launch.launch_date_local )
-                            is_tentative_list.add(launch.is_tentative)
-
-                            tentative_max_precision_list.add(launch.tentative_max_precision )
-                            tbd_list.add(launch.tbd )
-                            launch_window_list.add(launch.launch_window)
-                            rocket_list.add(launch.rocket)
-                            ships_list.add(launch.ships )
-                            telemetry_list.add(launch.telemetry )
-                            launch_site_list.add(launch.launch_site )
-                            launch_success_list.add(launch.launch_success )
-                            links_list.add(launch.links as Links)
-                            details_list.add(launch.details )
-                            upcoming_list.add(launch.upcoming )
-
-                            static_fire_date_utc_list.add(launch.static_fire_date_utc )
-                            static_fire_date_unix_list.add(launch.static_fire_date_unix)
-                            timeline_list.add(launch.timeline)
-
-                        }
-                        recyclerView.layoutManager = GridLayoutManager(context, 1)
-                        recyclerView.adapter = LaunchListAdapter(
-                            flight_number_list,
-                            mission_name_list,
-                            mission_id_list,
-                            launch_year_list,
-                            launch_date_unix_list,
-                            launch_date_utc_list,
-                            launch_date_local_list,
-                            is_tentative_list,
-                            tentative_max_precision_list,
-                            tbd_list,
-                            launch_window_list,
-                            rocket_list,
-                            ships_list,
-                            telemetry_list,
-                            launch_site_list,
-                            launch_success_list,
-                            links_list,
-                            details_list,
-                            upcoming_list,
-                            static_fire_date_utc_list,
-                            static_fire_date_unix_list,
-                            timeline_list,
-                            context
-                        )
-
-                    }else{
-                        print("nalaka")
-                        Log.d("error message:", response.message())
-                    }
+                }else{
+                    print("nalaka")
+                    Log.d("error message:", response.message())
                 }
-                override fun onFailure(call: Call<List<Launch>>, t: Throwable) {
-                    println(t.message)
-                    println(t)
-                    Toast.makeText(context,t.message, Toast.LENGTH_LONG).show()
-                }
-            })
-        }
-        else if(past){
-            RetrofitClient.instance.getAllPastLaunches().enqueue(object :
-                Callback<List<Launch>> {
-                override fun onResponse(
-                    call: Call<List<Launch>>,
-                    response: Response<List<Launch>>
-                ) {
-                    println(response.toString())
-                    print("response " + (response.code() == 200 ))
-                    if(response.code() == 200 ){
-                        print("burdayız")
-                        var launchList = response?.body() as List<Launch>
-                        flight_number_list.clear()
-                        mission_name_list.clear()
-                        mission_id_list.clear()
-                        launch_year_list.clear()
-                        launch_date_unix_list.clear()
-                        launch_date_utc_list.clear()
-                        launch_date_local_list.clear()
-                        is_tentative_list.clear()
-
-                        tentative_max_precision_list.clear()
-                        tbd_list.clear()
-                        launch_window_list.clear()
-                        rocket_list.clear()
-                        ships_list.clear()
-                        telemetry_list.clear()
-                        launch_site_list.clear()
-                        launch_success_list.clear()
-                        links_list.clear()
-                        details_list.clear()
-                        upcoming_list.clear()
-
-                        static_fire_date_utc_list.clear()
-                        static_fire_date_unix_list.clear()
-                        timeline_list.clear()
-
-
-                        for (launch in launchList) {
-                            flight_number_list.add(launch.flight_number)
-                            mission_name_list.add(launch.mission_name )
-                            mission_id_list.add(launch.mission_id )
-                            launch_year_list.add(launch.launch_year )
-                            launch_date_unix_list.add(launch.launch_date_unix )
-                            launch_date_utc_list.add(launch.launch_date_utc)
-                            launch_date_local_list.add(launch.launch_date_local )
-                            is_tentative_list.add(launch.is_tentative)
-
-                            tentative_max_precision_list.add(launch.tentative_max_precision )
-                            tbd_list.add(launch.tbd )
-                            launch_window_list.add(launch.launch_window)
-                            rocket_list.add(launch.rocket)
-                            ships_list.add(launch.ships )
-                            telemetry_list.add(launch.telemetry )
-                            launch_site_list.add(launch.launch_site )
-                            launch_success_list.add(launch.launch_success )
-                            links_list.add(launch.links as Links)
-                            details_list.add(launch.details )
-                            upcoming_list.add(launch.upcoming )
-
-                            static_fire_date_utc_list.add(launch.static_fire_date_utc )
-                            static_fire_date_unix_list.add(launch.static_fire_date_unix)
-                            timeline_list.add(launch.timeline)
-
-                        }
-                        recyclerView.layoutManager = GridLayoutManager(context, 1)
-                        recyclerView.adapter = LaunchListAdapter(
-                            flight_number_list,
-                            mission_name_list,
-                            mission_id_list,
-                            launch_year_list,
-                            launch_date_unix_list,
-                            launch_date_utc_list,
-                            launch_date_local_list,
-                            is_tentative_list,
-                            tentative_max_precision_list,
-                            tbd_list,
-                            launch_window_list,
-                            rocket_list,
-                            ships_list,
-                            telemetry_list,
-                            launch_site_list,
-                            launch_success_list,
-                            links_list,
-                            details_list,
-                            upcoming_list,
-                            static_fire_date_utc_list,
-                            static_fire_date_unix_list,
-                            timeline_list,
-                            context
-                        )
-
-                    }else{
-                        print("nalaka")
-                        Log.d("error message:", response.message())
-                    }
-                }
-                override fun onFailure(call: Call<List<Launch>>, t: Throwable) {
-                    println(t.message)
-                    println(t)
-                    Toast.makeText(context,t.message, Toast.LENGTH_LONG).show()
-                }
-            })
-        }
-
-
+            }
+            override fun onFailure(call: Call<List<Launch>>, t: Throwable) {
+                println(t.message)
+                println(t)
+                Toast.makeText(context,t.message, Toast.LENGTH_LONG).show()
+            }
+        })
     }
+
+
+
 
     private fun arrangeListItemsForRecycleView(launchList: List<Launch>) {
         flight_number_list.clear()

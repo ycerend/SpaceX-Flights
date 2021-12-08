@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:background="#81E4C9C8"
-            android:text="@{historicalEvent.event_date_utc.toString()}"
+            android:text="@{historicalEvent.event_date_utc.toGMTString()}"
             />
         <TextView
             android:id="@+id/event_details"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:text="@{historicalEvent.links.wikipedia }"
-        android:textIsSelectable="true"/>
+        android:clickable="true"/>
 
         <TextView
             android:id="@+id/event_links_article"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:text="@{historicalEvent.links.article }"
-            android:textIsSelectable="true"/>
+            android:clickable="true"/>
 
 
     </LinearLayout>

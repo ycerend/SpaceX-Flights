@@ -11,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import com.example.flightspacex.MainActivity
 import com.example.flightspacex.R
 import com.example.flightspacex.activity.ui.Events.EventListFragment
+import com.example.flightspacex.activity.ui.Launchs.LaunchListFragment
 import com.example.flightspacex.activity.ui.Launchs.LaunchMainFragment
 import com.example.flightspacex.activity.ui.Missions.MissionListFragment
 import com.example.flightspacex.databinding.ActivityMiddleMainBinding
@@ -59,7 +60,7 @@ class MiddleMainActivity : AppCompatActivity(), fragmentOperationsInterface {
             active = fragmentEventList*/
 
         }else if(launch){
-            val fragment = LaunchMainFragment.Companion.newInstance()
+            val fragment = LaunchListFragment.Companion.newInstance()
             fragmentTransaction(
                 supportFragmentManager,
                 fragment,
@@ -69,7 +70,7 @@ class MiddleMainActivity : AppCompatActivity(), fragmentOperationsInterface {
                 false
             )
         }else if(mission){
-            val fragment = MissionListFragment.Companion.newInstance()
+            val fragment = LaunchMainFragment.Companion.newInstance()
             fragmentTransaction(
                 supportFragmentManager,
                 fragment,
@@ -107,7 +108,7 @@ class MiddleMainActivity : AppCompatActivity(), fragmentOperationsInterface {
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_missions -> {
-                    val fragment = MissionListFragment.Companion.newInstance()
+                    val fragment = LaunchMainFragment.Companion.newInstance()
                     fragmentTransaction(
                         supportFragmentManager,
                         fragment,
@@ -120,7 +121,7 @@ class MiddleMainActivity : AppCompatActivity(), fragmentOperationsInterface {
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_launch -> {
-                    val fragment = LaunchMainFragment.Companion.newInstance()
+                    val fragment = LaunchListFragment.Companion.newInstance()
                     fragmentTransaction(
                         supportFragmentManager,
                         fragment,
