@@ -7,5 +7,7 @@ How to run:
 2. Upload the application APK to emulator
 3. Start application
 
-Android Minumum SDK:23
-Andorid Target SDK:30
+
+Configuration:
+Android Minumum SDK:23 (Android 6.0)
+
