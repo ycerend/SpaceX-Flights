@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                              
+                                                        
+
+    
+
+                 
+                               
+                                                                       
+           
+
+    <RelativeLayout
+        android:id="@+id/mission_layout_general"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:background="#ADFFFFFF" android:tag="layout/single_mission_display_receylerview_item_model_0" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <!-- look display_event_recyclerview_item_model.xml if you want to add image-->
+
+        <RelativeLayout
+            android:id="@+id/mission_list_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="@id/mission_layout_general"
+            tools:ignore="NotSibling">
+
+            <!--android:layout_toEndOf="@id/event_list_item_image"-->
+            <TextView
+                android:id="@+id/mission_name"
+                style="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="8dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:minHeight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#FF000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:tag="binding_1"                   />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+         

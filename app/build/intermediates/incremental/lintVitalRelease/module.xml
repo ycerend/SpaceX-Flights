@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/cerendardagan/Desktop/github /SpaceX-Flights/app"
+    name=":app"
+    type="APP"
+    maven="FlightSpaceX:app:"
+    gradle="7.0.3"
+    buildFolder="build"
+    bootClassPath="/Users/cerendardagan/Library/Android/sdk/platforms/android-30/android.jar:/Users/cerendardagan/Library/Android/sdk/build-tools/30.0.2/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-30"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

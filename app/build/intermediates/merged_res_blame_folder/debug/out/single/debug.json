@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable_ic_event_item_icon_image_foreground.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/drawable/ic_event_item_icon_image_foreground.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_activity_middle_main.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/activity_middle_main.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable_ic_baseline_launch_24.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/drawable/ic_baseline_launch_24.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_single_mission_display_receylerview_item_model.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/single_mission_display_receylerview_item_model.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_mission_list_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/mission_list_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_single_mission_display_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/single_mission_display_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_single_event_display_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/single_event_display_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_event_list_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/event_list_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_single_launch_display_recyclerview_item_model.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/single_launch_display_recyclerview_item_model.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_single_event_display_recyclerview_item_model.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/single_event_display_recyclerview_item_model.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_launch_list_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/launch_list_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/menu_bottom_nav.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/menu/bottom_nav.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_launch_main_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/launch_main_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_single_launch_display_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/single_launch_display_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/navigation_nav_graph.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable_ic_baseline_event_note_24.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/drawable/ic_baseline_event_note_24.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable_elon_musk.jpeg.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/drawable/elon_musk.jpeg"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_latest_launch_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/latest_launch_fragment.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/drawable_ic_baseline_double_arrow_24.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/drawable/ic_baseline_double_arrow_24.xml"
+    },
+    {
+        "merged": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/merged_res/debug/layout_latest_next_launchs_fragment.xml.flat",
+        "source": "/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/src/main/res/layout/latest_next_launchs_fragment.xml"
+    }
+]

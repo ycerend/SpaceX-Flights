@@ -1,0 +1,7 @@
+#Thu Dec 09 00:13:07 CET 2021
+base.1=/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
+path.1=classes2.dex
+base.0=/Users/cerendardagan/Desktop/github /SpaceX-Flights/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
